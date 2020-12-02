@@ -28,8 +28,8 @@ public class UsersController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ResponseEntity<Users> create(@RequestBody Users user){
 		
-		this.userService.createUser(user);
-		return ResponseEntity.ok().build();
+
+		return new ResponseEntity<>(this.userService.createUser(user), HttpStatus.CREATED);
 		
 		
 	}
